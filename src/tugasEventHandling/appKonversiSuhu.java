@@ -22,49 +22,192 @@ public class appKonversiSuhu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        suhu = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        inputSuhu = new javax.swing.JTextField();
+        celcius = new javax.swing.JRadioButton();
+        fahrenheit = new javax.swing.JRadioButton();
+        reamur = new javax.swing.JRadioButton();
+        kelvin = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        outKelvin = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        outCelcius = new javax.swing.JTextField();
+        outReamur = new javax.swing.JTextField();
+        outFahrenheit = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        keluar = new javax.swing.JButton();
+        konvert = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Konversi Suhu di Dunia");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 400, 30));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Suhu Yang DiKonversi"));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("Besarnya Suhu ");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
+        jPanel2.add(inputSuhu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 270, -1));
+
+        suhu.add(celcius);
+        celcius.setText("Celcius");
+        jPanel2.add(celcius, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+
+        suhu.add(fahrenheit);
+        fahrenheit.setText("Fahrenheit");
+        jPanel2.add(fahrenheit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+
+        suhu.add(reamur);
+        reamur.setText("Reamur");
+        jPanel2.add(reamur, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        suhu.add(kelvin);
+        kelvin.setText("Kelvin");
+        jPanel2.add(kelvin, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 380, 150));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Suhu Hasil Konversi"));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Celcius");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
+
+        outKelvin.setFocusable(false);
+        outKelvin.setRequestFocusEnabled(false);
+        jPanel3.add(outKelvin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 150, -1));
+
+        jLabel4.setText("Reamur");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
+
+        jLabel5.setText("Fahrenheit");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, 20));
+
+        jLabel6.setText("Kelvin");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 20));
+
+        outCelcius.setFocusable(false);
+        outCelcius.setRequestFocusEnabled(false);
+        jPanel3.add(outCelcius, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 18, 150, -1));
+
+        outReamur.setFocusable(false);
+        outReamur.setRequestFocusEnabled(false);
+        jPanel3.add(outReamur, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 150, -1));
+
+        outFahrenheit.setFocusable(false);
+        outFahrenheit.setRequestFocusEnabled(false);
+        outFahrenheit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outFahrenheitActionPerformed(evt);
+            }
+        });
+        jPanel3.add(outFahrenheit, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 150, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 270, 140));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), " "));
+
+        keluar.setText("keluar");
+        keluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                keluarActionPerformed(evt);
+            }
+        });
+
+        konvert.setText("KONVERT");
+        konvert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                konvertActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(keluar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(konvert, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addComponent(konvert, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(keluar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 110, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void outFahrenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outFahrenheitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outFahrenheitActionPerformed
+
+    private void konvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_konvertActionPerformed
+        // TODO add your handling code here:
+        double suhu = Double.parseDouble(inputSuhu.getText());
+        if (celcius.isSelected()) {
+            outCelcius.setText(String.valueOf(suhu));
+            outFahrenheit.setText(String.valueOf((suhu * 9/5) + 32));
+            outReamur.setText(String.valueOf(suhu * 4/5));
+            outKelvin.setText(String.valueOf(suhu + 273.15));
+        } else if (fahrenheit.isSelected()) {
+            outFahrenheit.setText(String.valueOf(suhu));
+            outCelcius.setText(String.valueOf((suhu - 32) * 5/9));
+            outReamur.setText(String.valueOf((suhu - 32) * 4/9));
+            outKelvin.setText(String.valueOf((suhu - 32) * 5/9 + 273.15));
+        } else if (reamur.isSelected()) {
+            outReamur.setText(String.valueOf(suhu));
+            outCelcius.setText(String.valueOf(suhu * 5/4));
+            outFahrenheit.setText(String.valueOf((suhu * 9/4) + 32));
+            outKelvin.setText(String.valueOf((suhu * 5/4) + 273.15));
+        } else if (kelvin.isSelected()) {
+            outKelvin.setText(String.valueOf(suhu));
+            outCelcius.setText(String.valueOf(suhu - 273.15));
+            outFahrenheit.setText(String.valueOf((suhu - 273.15) * 9/5 + 32));
+            outReamur.setText(String.valueOf((suhu - 273.15) * 4/5));
+        }
+        inputSuhu.setText("");
+    }//GEN-LAST:event_konvertActionPerformed
+
+    private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_keluarActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(appKonversiSuhu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(appKonversiSuhu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(appKonversiSuhu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(appKonversiSuhu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -74,5 +217,27 @@ public class appKonversiSuhu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton celcius;
+    private javax.swing.JRadioButton fahrenheit;
+    private javax.swing.JTextField inputSuhu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton keluar;
+    private javax.swing.JRadioButton kelvin;
+    private javax.swing.JButton konvert;
+    private javax.swing.JTextField outCelcius;
+    private javax.swing.JTextField outFahrenheit;
+    private javax.swing.JTextField outKelvin;
+    private javax.swing.JTextField outReamur;
+    private javax.swing.JRadioButton reamur;
+    private javax.swing.ButtonGroup suhu;
     // End of variables declaration//GEN-END:variables
 }

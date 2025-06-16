@@ -1,9 +1,10 @@
-package tugasEventHandling;
+package latihan;
 
 /**
  *
  * @author Xierra
  */
+import tugasEventHandling.*;
 import javax.swing.JOptionPane;
 public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
 
@@ -23,6 +24,8 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,7 +50,14 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
         hitung = new javax.swing.JButton();
         hapus = new javax.swing.JButton();
         simpan = new javax.swing.JButton();
+        hapusTable = new javax.swing.JButton();
         keluar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableNilai = new javax.swing.JTable();
+
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,6 +216,14 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
         });
         jPanel5.add(simpan);
 
+        hapusTable.setText("HAPUS");
+        hapusTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusTableActionPerformed(evt);
+            }
+        });
+        jPanel5.add(hapusTable);
+
         keluar.setText("KELUAR");
         keluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,6 +232,16 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
         });
         jPanel5.add(keluar);
 
+        tableNilai.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nama", "Nilai Rata-Rata", "Grade", "Hasil"
+            }
+        ));
+        jScrollPane1.setViewportView(tableNilai);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -221,12 +249,15 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -238,9 +269,11 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -326,6 +359,27 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
 
     private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
         // TODO add your handling code here:
+
+        String nama = outNama.getText();
+        String rataRata = outRataRata.getText();
+        String grade = outGrade.getText();
+        String hasil = outHasil.getText();
+        if (nama.equals(":") || rataRata.equals(":") || grade.equals(":") || hasil.equals(":")) {
+            JOptionPane.showMessageDialog(this, "Pastikan semua nilai sudah dihitung sebelum disimpan.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) tableNilai.getModel();
+        model.addRow(new Object[]{nama, rataRata, grade, hasil});
+        
+        inNama.setText("");
+        inUTS.setText("");
+        inTM.setText("");
+        inUAS.setText("");
+        outNama.setText(":");
+        outRataRata.setText(":");
+        outGrade.setText(":");
+        outHasil.setText(":");
+        
     }//GEN-LAST:event_simpanActionPerformed
 
     private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
@@ -335,6 +389,19 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_keluarActionPerformed
+
+    private void hapusTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusTableActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tableNilai.getSelectedRow();
+        if (selectedRow != -1) {
+            javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) tableNilai.getModel();
+            model.removeRow(selectedRow);
+        } else {
+            JOptionPane.showMessageDialog(this, "Pilih baris yang ingin dihapus.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+    }//GEN-LAST:event_hapusTableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,11 +419,14 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton hapus;
+    private javax.swing.JButton hapusTable;
     private javax.swing.JButton hitung;
     private javax.swing.JTextField inNama;
     private javax.swing.JTextField inTM;
     private javax.swing.JTextField inUAS;
     private javax.swing.JTextField inUTS;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -370,11 +440,13 @@ public class appPenentuNilaiMahasiswa extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton keluar;
     private javax.swing.JLabel outGrade;
     private javax.swing.JLabel outHasil;
     private javax.swing.JLabel outNama;
     private javax.swing.JLabel outRataRata;
     private javax.swing.JButton simpan;
+    private javax.swing.JTable tableNilai;
     // End of variables declaration//GEN-END:variables
 }
